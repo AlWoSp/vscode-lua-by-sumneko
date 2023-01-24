@@ -163,6 +163,7 @@
 							"err-nonstandard-symbol",
 							"err-then-as-do",
 							"exp-in-action",
+							"global-element",
 							"global-in-nil-env",
 							"index-in-func-name",
 							"invisible",
@@ -323,6 +324,17 @@
 							],
 							"type": "string"
 						},
+						"conventions": {
+							"default": "None",
+							"description": "%config.diagnostics.conventions%",
+							"enum": [
+								"Any",
+								"Opened",
+								"None",
+								"Fallback"
+							],
+							"type": "string"
+						},
 						"duplicate": {
 							"default": "Fallback",
 							"description": "%config.diagnostics.duplicate%",
@@ -463,6 +475,17 @@
 								"Warning",
 								"Information",
 								"Hint",
+								"Fallback"
+							],
+							"type": "string"
+						},
+						"conventions": {
+							"default": "None",
+							"description": "%config.diagnostics.conventions%",
+							"enum": [
+								"Any",
+								"Opened",
+								"None",
 								"Fallback"
 							],
 							"type": "string"
@@ -866,6 +889,19 @@
 						"empty-block": {
 							"default": "Opened",
 							"description": "%config.diagnostics.empty-block%",
+							"enum": [
+								"Any",
+								"Opened",
+								"None",
+								"Any!",
+								"Opened!",
+								"None!"
+							],
+							"type": "string"
+						},
+						"global-element": {
+							"default": "None",
+							"description": "%config.diagnostics.global-element%",
 							"enum": [
 								"Any",
 								"Opened",
@@ -1637,6 +1673,19 @@
 								"Warning!",
 								"Information!",
 								"Hint!"
+							],
+							"type": "string"
+						},
+						"global-element": {
+							"default": "None",
+							"description": "%config.diagnostics.global-element%",
+							"enum": [
+								"Any",
+								"Opened",
+								"None",
+								"Any!",
+								"Opened!",
+								"None!"
 							],
 							"type": "string"
 						},

@@ -222,6 +222,7 @@
                     "err-nonstandard-symbol",
                     "err-then-as-do",
                     "exp-in-action",
+                    "global-element",
                     "global-in-nil-env",
                     "index-in-func-name",
                     "invisible",
@@ -382,6 +383,17 @@
                     ],
                     "type": "string"
                 },
+                "conventions": {
+                    "default": "None",
+                    "description": "* global-element\n* ...",
+                    "enum": [
+                        "Any",
+                        "Opened",
+                        "None",
+                        "Fallback"
+                    ],
+                    "type": "string"
+                },
                 "duplicate": {
                     "default": "Fallback",
                     "description": "* duplicate-index\n* duplicate-set-field",
@@ -522,6 +534,17 @@
                         "Warning",
                         "Information",
                         "Hint",
+                        "Fallback"
+                    ],
+                    "type": "string"
+                },
+                "conventions": {
+                    "default": "None",
+                    "description": "* global-element\n* ...",
+                    "enum": [
+                        "Any",
+                        "Opened",
+                        "None",
                         "Fallback"
                     ],
                     "type": "string"
@@ -925,6 +948,19 @@
                 "empty-block": {
                     "default": "Opened",
                     "description": "Enable empty code block diagnostics.",
+                    "enum": [
+                        "Any",
+                        "Opened",
+                        "None",
+                        "Any!",
+                        "Opened!",
+                        "None!"
+                    ],
+                    "type": "string"
+                },
+                "global-element": {
+                    "default": "None",
+                    "description": "Enable avoiding all global elements.",
                     "enum": [
                         "Any",
                         "Opened",
@@ -1696,6 +1732,19 @@
                         "Warning!",
                         "Information!",
                         "Hint!"
+                    ],
+                    "type": "string"
+                },
+                "global-element": {
+                    "default": "None",
+                    "description": "Enable avoiding all global elements.",
+                    "enum": [
+                        "Any",
+                        "Opened",
+                        "None",
+                        "Any!",
+                        "Opened!",
+                        "None!"
                     ],
                     "type": "string"
                 },

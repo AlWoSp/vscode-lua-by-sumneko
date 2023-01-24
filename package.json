@@ -480,12 +480,13 @@
 							"type": "string"
 						},
 						"conventions": {
-							"default": "None",
+							"default": "Fallback",
 							"description": "%config.diagnostics.conventions%",
 							"enum": [
-								"Any",
-								"Opened",
-								"None",
+								"Error",
+								"Warning",
+								"Information",
+								"Hint",
 								"Fallback"
 							],
 							"type": "string"
@@ -1677,15 +1678,17 @@
 							"type": "string"
 						},
 						"global-element": {
-							"default": "None",
+							"default": "Information",
 							"description": "%config.diagnostics.global-element%",
 							"enum": [
-								"Any",
-								"Opened",
-								"None",
-								"Any!",
-								"Opened!",
-								"None!"
+								"Error",
+								"Warning",
+								"Information",
+								"Hint",
+								"Error!",
+								"Warning!",
+								"Information!",
+								"Hint!"
 							],
 							"type": "string"
 						},

@@ -539,12 +539,13 @@
                     "type": "string"
                 },
                 "conventions": {
-                    "default": "None",
+                    "default": "Fallback",
                     "description": "* global-element\n* ...",
                     "enum": [
-                        "Any",
-                        "Opened",
-                        "None",
+                        "Error",
+                        "Warning",
+                        "Information",
+                        "Hint",
                         "Fallback"
                     ],
                     "type": "string"
@@ -1736,15 +1737,17 @@
                     "type": "string"
                 },
                 "global-element": {
-                    "default": "None",
+                    "default": "Information",
                     "description": "Enable avoiding all global elements.",
                     "enum": [
-                        "Any",
-                        "Opened",
-                        "None",
-                        "Any!",
-                        "Opened!",
-                        "None!"
+                        "Error",
+                        "Warning",
+                        "Information",
+                        "Hint",
+                        "Error!",
+                        "Warning!",
+                        "Information!",
+                        "Hint!"
                     ],
                     "type": "string"
                 },

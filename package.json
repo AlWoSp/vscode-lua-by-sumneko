@@ -208,8 +208,11 @@
 							"miss-sep-in-table",
 							"miss-space-between",
 							"miss-symbol",
+							"missing-global-doc",
+							"missing-param-doc",
 							"missing-parameter",
 							"missing-return",
+							"missing-return-doc",
 							"missing-return-value",
 							"need-check-nil",
 							"need-paren",
@@ -915,6 +918,32 @@
 							],
 							"type": "string"
 						},
+						"missing-global-doc": {
+							"default": "None",
+							"description": "%config.diagnostics.missing-global-doc%",
+							"enum": [
+								"Any",
+								"Opened",
+								"None",
+								"Any!",
+								"Opened!",
+								"None!"
+							],
+							"type": "string"
+						},    
+						"missing-param-doc": {
+							"default": "None",
+							"description": "%config.diagnostics.missing-param-doc%",
+							"enum": [
+								"Any",
+								"Opened",
+								"None",
+								"Any!",
+								"Opened!",
+								"None!"
+							],
+							"type": "string"
+						},
 						"missing-parameter": {
 							"default": "Any",
 							"description": "%config.diagnostics.missing-parameter%",
@@ -931,6 +960,19 @@
 						"missing-return": {
 							"default": "Any",
 							"description": "%config.diagnostics.missing-return%",
+							"enum": [
+								"Any",
+								"Opened",
+								"None",
+								"Any!",
+								"Opened!",
+								"None!"
+							],
+							"type": "string"
+						},
+						"missing-return-doc": {
+							"default": "Any",
+							"description": "%config.diagnostics.missing-return-doc%",
 							"enum": [
 								"Any",
 								"Opened",
@@ -1685,6 +1727,36 @@
 							],
 							"type": "string"
 						},
+						"missing-global-doc": {
+							"default": "Warning",
+							"description": "%config.diagnostics.missing-global-doc%",
+							"enum": [
+								"Error",
+								"Warning",
+								"Information",
+								"Hint",
+								"Error!",
+								"Warning!",
+								"Information!",
+								"Hint!"
+							],
+							"type": "string"
+						},
+						"missing-param-doc": {
+							"default": "Warning",
+							"description": "%config.diagnostics.missing-param-doc%",
+							"enum": [
+								"Error",
+								"Warning",
+								"Information",
+								"Hint",
+								"Error!",
+								"Warning!",
+								"Information!",
+								"Hint!"
+							],
+							"type": "string"
+						},
 						"missing-parameter": {
 							"default": "Warning",
 							"description": "%config.diagnostics.missing-parameter%",
@@ -1703,6 +1775,21 @@
 						"missing-return": {
 							"default": "Warning",
 							"description": "%config.diagnostics.missing-return%",
+							"enum": [
+								"Error",
+								"Warning",
+								"Information",
+								"Hint",
+								"Error!",
+								"Warning!",
+								"Information!",
+								"Hint!"
+							],
+							"type": "string"
+						},
+						"missing-return-doc": {
+							"default": "Warning",
+							"description": "%config.diagnostics.missing-return-doc%",
 							"enum": [
 								"Error",
 								"Warning",

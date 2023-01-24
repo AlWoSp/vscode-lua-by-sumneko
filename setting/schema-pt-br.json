@@ -267,8 +267,11 @@
                     "miss-sep-in-table",
                     "miss-space-between",
                     "miss-symbol",
+					"missing-global-doc",
+					"missing-param-doc",
                     "missing-parameter",
                     "missing-return",
+					"missing-return-doc",
                     "missing-return-value",
                     "need-check-nil",
                     "need-paren",
@@ -461,7 +464,7 @@
                 },
                 "unbalanced": {
                     "default": "Fallback",
-                    "description": "* missing-parameter\n* missing-return\n* missing-return-value\n* redundant-parameter\n* redundant-return-value\n* redundant-value\n* unbalanced-assignments",
+                    "description": "* missing-global-doc\n* missing-parameter\n* missing-param-doc\n* missing-return\n* missing-return-doc\n* missing-return-value\n* redundant-parameter\n* redundant-return-value\n* redundant-value\n* unbalanced-assignments",
                     "enum": [
                         "Any",
                         "Opened",
@@ -612,7 +615,7 @@
                 },
                 "unbalanced": {
                     "default": "Fallback",
-                    "description": "* missing-parameter\n* missing-return\n* missing-return-value\n* redundant-parameter\n* redundant-return-value\n* redundant-value\n* unbalanced-assignments",
+                    "description": "* missing-global-doc\n* missing-parameter\n* missing-param-doc\n* missing-return\n* missing-return-doc\n* missing-return-value\n* redundant-parameter\n* redundant-return-value\n* redundant-value\n* unbalanced-assignments",
                     "enum": [
                         "Error",
                         "Warning",
@@ -963,7 +966,33 @@
                 },
                 "lowercase-global": {
                     "default": "Any",
-                    "description": "首字母小写的全局变量定义",
+                    "description": "Enable lowercase global variable definition diagnostics.",
+                    "enum": [
+                        "Any",
+                        "Opened",
+                        "None",
+                        "Any!",
+                        "Opened!",
+                        "None!"
+                    ],
+                    "type": "string"
+                },
+				"missing-global-doc": {
+                    "default": "None",
+                    "description": "Enable diagnostics for global function calls which are not annotated.",
+                    "enum": [
+                        "Any",
+                        "Opened",
+                        "None",
+                        "Any!",
+                        "Opened!",
+                        "None!"
+                    ],
+                    "type": "string"
+                },
+				"missing-param-doc": {
+                    "default": "None",
+                    "description": "Enable diagnostics for function calls where the annotation for a function parameter is missing.",
                     "enum": [
                         "Any",
                         "Opened",
@@ -990,6 +1019,19 @@
                 "missing-return": {
                     "default": "Any",
                     "description": "Enable diagnostics for functions with return annotations which have no return statement.",
+                    "enum": [
+                        "Any",
+                        "Opened",
+                        "None",
+                        "Any!",
+                        "Opened!",
+                        "None!"
+                    ],
+                    "type": "string"
+                },
+				"missing-return-doc": {
+                    "default": "None",
+                    "description": "Enable diagnostics for function calls where a return annotation is missing.",
                     "enum": [
                         "Any",
                         "Opened",

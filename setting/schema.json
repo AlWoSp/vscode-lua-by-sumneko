@@ -312,7 +312,8 @@
                     "unused-function",
                     "unused-label",
                     "unused-local",
-                    "unused-vararg"
+                    "unused-vararg",
+                    "uppercase-local"
                 ],
                 "type": "string"
             },
@@ -385,7 +386,7 @@
                 },
                 "conventions": {
                     "default": "None",
-                    "description": "* global-element\n* ...",
+                    "description": "* global-element\n* uppercase-local\n* ...",
                     "enum": [
                         "Any",
                         "Opened",
@@ -540,7 +541,7 @@
                 },
                 "conventions": {
                     "default": "Fallback",
-                    "description": "* global-element\n* ...",
+                    "description": "* global-element\n* uppercase-local\n* ...",
                     "enum": [
                         "Error",
                         "Warning",
@@ -1426,6 +1427,19 @@
                         "None!"
                     ],
                     "type": "string"
+                },
+                "uppercase-local": {
+                    "default": "None",
+                    "description": "Enable warning for uppercase local element names.",
+                    "enum": [
+                        "Any",
+                        "Opened",
+                        "None",
+                        "Any!",
+                        "Opened!",
+                        "None!"
+                    ],
+                    "type": "string"
                 }
             },
             "scope": "resource",
@@ -2264,6 +2278,21 @@
                 "unused-vararg": {
                     "default": "Hint",
                     "description": "Enable unused vararg diagnostics.",
+                    "enum": [
+                        "Error",
+                        "Warning",
+                        "Information",
+                        "Hint",
+                        "Error!",
+                        "Warning!",
+                        "Information!",
+                        "Hint!"
+                    ],
+                    "type": "string"
+                },
+                "uppercase-local": {
+                    "default": "Information",
+                    "description": "Enable warning for uppercase local element names.",
                     "enum": [
                         "Error",
                         "Warning",

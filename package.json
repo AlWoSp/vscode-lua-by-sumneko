@@ -253,7 +253,8 @@
 							"unused-function",
 							"unused-label",
 							"unused-local",
-							"unused-vararg"
+							"unused-vararg",
+							"uppercase-local"
 						],
 						"type": "string"
 					},
@@ -1367,6 +1368,19 @@
 								"None!"
 							],
 							"type": "string"
+						},
+						"uppercase-local": {
+							"default": "None",
+							"description": "%config.diagnostics.uppercase-local%",
+							"enum": [
+								"Any",
+								"Opened",
+								"None",
+								"Any!",
+								"Opened!",
+								"None!"
+							],
+							"type": "string"
 						}
 					},
 					"scope": "resource",
@@ -2205,6 +2219,21 @@
 						"unused-vararg": {
 							"default": "Hint",
 							"description": "%config.diagnostics.unused-vararg%",
+							"enum": [
+								"Error",
+								"Warning",
+								"Information",
+								"Hint",
+								"Error!",
+								"Warning!",
+								"Information!",
+								"Hint!"
+							],
+							"type": "string"
+						},
+						"uppercase-local": {
+							"default": "Information",
+							"description": "%config.diagnostics.uppercase-local%",
 							"enum": [
 								"Error",
 								"Warning",

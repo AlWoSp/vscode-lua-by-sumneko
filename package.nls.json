@@ -116,6 +116,7 @@
     "config.diagnostics.unused-local": "Enable unused local variable diagnostics.",
     "config.diagnostics.unused-vararg": "Enable unused vararg diagnostics.",
     "config.diagnostics.unusedLocalExclude": "Do not diagnose `unused-local` when the variable name matches the following pattern.",
+    "config.diagnostics.uppercase-local": "Enable diagnostic for uppercase local element names.",
     "config.diagnostics.workspaceDelay": "Latency (milliseconds) for workspace diagnostics.",
     "config.diagnostics.workspaceEvent": "Set the time to trigger workspace diagnostics.",
     "config.diagnostics.workspaceEvent.None": "Disable workspace diagnostics.",

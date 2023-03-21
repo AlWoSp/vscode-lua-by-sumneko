@@ -396,17 +396,6 @@
                     ],
                     "type": "string"
                 },
-                "conventions": {
-                    "default": "None",
-                    "description": "* global-element\n* ...",
-                    "enum": [
-                        "Any",
-                        "Opened",
-                        "None",
-                        "Fallback"
-                    ],
-                    "type": "string"
-                },
                 "duplicate": {
                     "default": "Fallback",
                     "description": "* duplicate-index\n* duplicate-set-field",
@@ -454,6 +443,17 @@
                 "strict": {
                     "default": "Fallback",
                     "description": "* close-non-object\n* deprecated\n* discard-returns\n* invisible",
+                    "enum": [
+                        "Any",
+                        "Opened",
+                        "None",
+                        "Fallback"
+                    ],
+                    "type": "string"
+                },
+                "strict-conventions": {
+                    "default": "None",
+                    "description": "* global-element\n* ...",
                     "enum": [
                         "Any",
                         "Opened",
@@ -551,18 +551,6 @@
                     ],
                     "type": "string"
                 },
-                "conventions": {
-                    "default": "Fallback",
-                    "description": "* global-element\n* ...",
-                    "enum": [
-                        "Error",
-                        "Warning",
-                        "Information",
-                        "Hint",
-                        "Fallback"
-                    ],
-                    "type": "string"
-                },
                 "duplicate": {
                     "default": "Fallback",
                     "description": "* duplicate-index\n* duplicate-set-field",
@@ -614,6 +602,18 @@
                 "strict": {
                     "default": "Fallback",
                     "description": "* close-non-object\n* deprecated\n* discard-returns\n* invisible",
+                    "enum": [
+                        "Error",
+                        "Warning",
+                        "Information",
+                        "Hint",
+                        "Fallback"
+                    ],
+                    "type": "string"
+                },
+                "strict-conventions": {
+                    "default": "Fallback",
+                    "description": "* global-element\n* ...",
                     "enum": [
                         "Error",
                         "Warning",
@@ -1750,7 +1750,7 @@
                     "type": "string"
                 },
                 "global-element": {
-                    "default": "Information",
+                    "default": "Warning",
                     "description": "Enable avoiding all global elements.",
                     "enum": [
                         "Error",

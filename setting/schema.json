@@ -1,6 +1,19 @@
 {
     "description": "Setting of sumneko.lua",
     "properties": {
+        "addonManager": {
+            "properties": {
+                "enable": {
+                    "$ref": "#/properties/addonManager.enable"
+                }
+            }
+        },
+        "addonManager.enable": {
+            "default": true,
+            "markdownDescription": "Whether the addon manager is enabled or not.",
+            "scope": "resource",
+            "type": "boolean"
+        },
         "codeLens": {
             "properties": {
                 "enable": {
@@ -766,7 +779,7 @@
                 },
                 "circle-doc-class": {
                     "default": "Any",
-                    "description": "%config.diagnostics.circle-doc-class%",
+                    "description": "",
                     "enum": [
                         "Any",
                         "Opened",
@@ -1513,7 +1526,7 @@
                 },
                 "circle-doc-class": {
                     "default": "Warning",
-                    "description": "%config.diagnostics.circle-doc-class%",
+                    "description": "",
                     "enum": [
                         "Error",
                         "Warning",
@@ -2370,7 +2383,7 @@
         },
         "format.defaultConfig": {
             "additionalProperties": false,
-            "default": [],
+            "default": {},
             "markdownDescription": "The default format configuration. Has a lower priority than `.editorconfig` file in the workspace.\nRead [formatter docs](https://github.com/CppCXY/EmmyLuaCodeStyle/tree/master/docs) to learn usage.\n",
             "patternProperties": {
                 ".*": {
@@ -2573,7 +2586,7 @@
             "items": {
                 "type": "string"
             },
-            "markdownDescription": "[Command line parameters](https://github.com/sumneko/lua-telemetry-server/tree/master/method) when starting the language server in VSCode.",
+            "markdownDescription": "[Command line parameters](https://github.com/LuaLS/lua-telemetry-server/tree/master/method) when starting the language server in VSCode.",
             "scope": "resource",
             "type": "array"
         },
@@ -2620,7 +2633,7 @@
             "properties": {
                 "basic": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.basic%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2630,7 +2643,7 @@
                 },
                 "bit": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.bit%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2640,7 +2653,7 @@
                 },
                 "bit32": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.bit32%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2650,7 +2663,7 @@
                 },
                 "builtin": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.builtin%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2660,7 +2673,7 @@
                 },
                 "coroutine": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.coroutine%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2670,7 +2683,7 @@
                 },
                 "debug": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.debug%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2680,7 +2693,7 @@
                 },
                 "ffi": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.ffi%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2690,7 +2703,7 @@
                 },
                 "io": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.io%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2700,7 +2713,7 @@
                 },
                 "jit": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.jit%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2710,7 +2723,7 @@
                 },
                 "math": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.math%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2720,7 +2733,7 @@
                 },
                 "os": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.os%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2730,7 +2743,7 @@
                 },
                 "package": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.package%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2740,7 +2753,7 @@
                 },
                 "string": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.string%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2750,7 +2763,7 @@
                 },
                 "string.buffer": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.string.buffer%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2760,7 +2773,7 @@
                 },
                 "table": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.table%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2770,7 +2783,7 @@
                 },
                 "table.clear": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.table.clear%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2780,7 +2793,7 @@
                 },
                 "table.new": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.table.new%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2790,7 +2803,7 @@
                 },
                 "utf8": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.utf8%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2813,10 +2826,10 @@
             ],
             "markdownDescription": "File encoding. The `ansi` option is only available under the `Windows` platform.",
             "markdownEnumDescriptions": [
-                "%config.runtime.fileEncoding.utf8%",
-                "%config.runtime.fileEncoding.ansi%",
-                "%config.runtime.fileEncoding.utf16le%",
-                "%config.runtime.fileEncoding.utf16be%"
+                "",
+                "",
+                "",
+                ""
             ],
             "scope": "resource",
             "type": "string"
@@ -2877,7 +2890,7 @@
         },
         "runtime.plugin": {
             "default": "",
-            "markdownDescription": "Plugin path. Please read [wiki](https://github.com/sumneko/lua-language-server/wiki/Plugins) to learn more.",
+            "markdownDescription": "Plugin path. Please read [wiki](https://github.com/LuaLS/lua-language-server/wiki/Plugins) to learn more.",
             "scope": "resource",
             "type": "string"
         },
@@ -2892,7 +2905,7 @@
         },
         "runtime.special": {
             "additionalProperties": false,
-            "default": [],
+            "default": {},
             "markdownDescription": "The custom global variables are regarded as some special built-in variables, and the language server will provide special support\nThe following example shows that 'include' is treated as' require '.\n```json\n\"Lua.runtime.special\" : {\n    \"include\" : \"require\"\n}\n```\n",
             "patternProperties": {
                 ".*": {
@@ -2909,7 +2922,8 @@
                         "xpcall",
                         "assert",
                         "error",
-                        "type"
+                        "type",
+                        "os.exit"
                     ],
                     "type": "string"
                 }
@@ -2935,11 +2949,11 @@
             ],
             "markdownDescription": "Lua runtime version.",
             "markdownEnumDescriptions": [
-                "%config.runtime.version.Lua 5.1%",
-                "%config.runtime.version.Lua 5.2%",
-                "%config.runtime.version.Lua 5.3%",
-                "%config.runtime.version.Lua 5.4%",
-                "%config.runtime.version.LuaJIT%"
+                "",
+                "",
+                "",
+                "",
+                ""
             ],
             "scope": "resource",
             "type": "string"
@@ -3117,9 +3131,6 @@
                 "preloadFileSize": {
                     "$ref": "#/properties/workspace.preloadFileSize"
                 },
-                "supportScheme": {
-                    "$ref": "#/properties/workspace.supportScheme"
-                },
                 "useGitIgnore": {
                     "$ref": "#/properties/workspace.useGitIgnore"
                 },
@@ -3172,19 +3183,6 @@
             "scope": "resource",
             "type": "integer"
         },
-        "workspace.supportScheme": {
-            "default": [
-                "file",
-                "untitled",
-                "git"
-            ],
-            "items": {
-                "type": "string"
-            },
-            "markdownDescription": "Provide language server for the Lua files of the following scheme.",
-            "scope": "resource",
-            "type": "array"
-        },
         "workspace.useGitIgnore": {
             "default": true,
             "markdownDescription": "Ignore files list in `.gitignore` .",
@@ -3196,7 +3194,7 @@
             "items": {
                 "type": "string"
             },
-            "markdownDescription": "Add private third-party library configuration file paths here, please refer to the built-in [configuration file path](https://github.com/sumneko/lua-language-server/tree/master/meta/3rd)",
+            "markdownDescription": "Add private third-party library configuration file paths here, please refer to the built-in [configuration file path](https://github.com/LuaLS/lua-language-server/tree/master/meta/3rd)",
             "scope": "resource",
             "type": "array"
         }

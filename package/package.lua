@@ -7,7 +7,7 @@ return {
     license = "MIT",
     repository = {
         type = "git",
-        url = "https://github.com/sumneko/lua-language-server"
+        url = "https://github.com/LuaLS/lua-language-server"
     },
     publisher = "sumneko",
     categories = {
@@ -21,7 +21,7 @@ return {
         "EmmyLua",
     },
     sponsor = {
-        url = "https://github.com/sumneko/lua-language-server/issues/484"
+        url = "https://github.com/LuaLS/lua-language-server/issues/484"
     },
     engines = {
         vscode = "^1.67.0"
@@ -37,15 +37,28 @@ return {
             {
                 command = "lua.psi.view",
                 title = "Lua Psi Viewer"
-            }
+            },
+            {
+                command = "lua.addon_manager.open",
+                title = "%command.addon_manager.open%",
+            },
+            {
+                command = "lua.exportDocument",
+                title = "%command.exportDocument%",
+            },
         },
         menus = {
             ["editor/context"] = {
                 {
                     when = "resourceLangId == lua",
-                    command = "lua.psi.view",
+                    command = "lua.exportDocument",
                     group = "z_commands"
-                }
+                },
+                {
+                    when = "resourceLangId == lua",
+                    command = "lua.addon_manager.open",
+                    group = "z_commands",
+                },
             }
         },
         configuration = {

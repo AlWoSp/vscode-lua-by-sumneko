@@ -25,10 +25,24 @@
 			{
 				"command": "lua.psi.view",
 				"title": "Lua Psi Viewer"
+			},
+			{
+				"command": "lua.addon_manager.open",
+				"title": "%command.addon_manager.open%"
+			},
+			{
+				"command": "lua.exportDocument",
+				"title": "%command.exportDocument%"
 			}
 		],
 		"configuration": {
 			"properties": {
+				"Lua.addonManager.enable": {
+					"default": true,
+					"markdownDescription": "%config.addonManager.enable%",
+					"scope": "resource",
+					"type": "boolean"
+				},
 				"Lua.codeLens.enable": {
 					"default": false,
 					"markdownDescription": "%config.codeLens.enable%",
@@ -2288,7 +2302,7 @@
 				},
 				"Lua.format.defaultConfig": {
 					"additionalProperties": false,
-					"default": [],
+					"default": {},
 					"markdownDescription": "%config.format.defaultConfig%",
 					"patternProperties": {
 						".*": {
@@ -2713,7 +2727,7 @@
 				},
 				"Lua.runtime.special": {
 					"additionalProperties": false,
-					"default": [],
+					"default": {},
 					"markdownDescription": "%config.runtime.special%",
 					"patternProperties": {
 						".*": {
@@ -2730,7 +2744,8 @@
 								"xpcall",
 								"assert",
 								"error",
-								"type"
+								"type",
+								"os.exit"
 							],
 							"type": "string"
 						}
@@ -2902,19 +2917,6 @@
 					"scope": "resource",
 					"type": "integer"
 				},
-				"Lua.workspace.supportScheme": {
-					"default": [
-						"file",
-						"untitled",
-						"git"
-					],
-					"items": {
-						"type": "string"
-					},
-					"markdownDescription": "%config.workspace.supportScheme%",
-					"scope": "resource",
-					"type": "array"
-				},
 				"Lua.workspace.useGitIgnore": {
 					"default": true,
 					"markdownDescription": "%config.workspace.useGitIgnore%",
@@ -2965,7 +2967,12 @@
 		"menus": {
 			"editor/context": [
 				{
-					"command": "lua.psi.view",
+					"command": "lua.exportDocument",
+					"group": "z_commands",
+					"when": "resourceLangId == lua"
+				},
+				{
+					"command": "lua.addon_manager.open",
 					"group": "z_commands",
 					"when": "resourceLangId == lua"
 				}
@@ -3110,10 +3117,10 @@
 	"publisher": "sumneko",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/sumneko/lua-language-server"
+		"url": "https://github.com/LuaLS/lua-language-server"
 	},
 	"sponsor": {
-		"url": "https://github.com/sumneko/lua-language-server/issues/484"
+		"url": "https://github.com/LuaLS/lua-language-server/issues/484"
 	},
-	"version": "3.6.7"
+	"version": "3.6.17"
 }

@@ -5,6 +5,10 @@
 	"license": "MIT",
 	"version": "0.0.1",
 	"publisher": "vscode",
+	"scripts": {
+		"lint": "npx eslint src/",
+		"build": "tsc"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/Microsoft/vscode-extension-samples"
@@ -13,7 +17,12 @@
 		"vscode": "^1.70.0"
 	},
 	"dependencies": {
-		"vscode-languageclient": "8.0.2"
+		"axios": "^1.2.1",
+		"dayjs": "^1.11.7",
+		"simple-git": "^3.16.0",
+		"triple-beam": "^1.3.0",
+		"vscode-languageclient": "8.1.0",
+		"winston": "^3.8.2"
 	},
 	"devDependencies": {
 		"@types/node": "^17.0.35",

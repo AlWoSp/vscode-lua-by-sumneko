@@ -1,5 +1,8 @@
 name: build
 
+permissions:
+  contents: write
+
 on:
   push:
     branches:
@@ -35,19 +38,31 @@ jobs:
         if: ${{ matrix.target == 'linux' }}
         run: |
           apt-get update
-          apt-get install -y software-properties-common curl sudo
+          apt-get install -y software-properties-common
           add-apt-repository -y ppa:ubuntu-toolchain-r/test # For gcc-9 and g++-9
           add-apt-repository -y ppa:git-core/ppa # For git>=2.18.
+          apt-get update
+          apt-get install -y sudo git gcc-9 g++-9
+
+          apt-get install -y curl
           curl -sL https://deb.nodesource.com/setup_14.x -o /tmp/nodesource_setup.sh # For nodejs
           sudo bash /tmp/nodesource_setup.sh
-          apt-get update
-          apt-get install -y git gcc-9 g++-9 nodejs
+          cd ~
+          curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh
+          sudo bash /tmp/nodesource_setup.sh
+          sudo apt install nodejs
 
       - name: Install aarch64-linux-gnu
         if: ${{ matrix.platform == 'linux-arm64' }}
         run: |
-          sudo apt-get update
-          sudo apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
+          apt-get update
+          apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
+
+      - name: Prepare container
+        if: ${{ matrix.target == 'linux' }}
+        run: |
+          update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100
+          update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 100
 
       - uses: actions/checkout@v3
         with:
@@ -58,7 +73,9 @@ jobs:
       - name: Run luamake
         id: luamake
         working-directory: ./server
-        run: luamake -platform ${{ matrix.platform }}
+        run: |
+          luamake -platform ${{ matrix.platform }}
+          rm -r ./build
 
       - name: Setting up workflow variables
         id: vars
@@ -80,14 +97,22 @@ jobs:
           echo PKG_BASENAME=${PKG_BASENAME} >> $GITHUB_OUTPUT
           echo PKG_NAME=${PKG_NAME} >> $GITHUB_OUTPUT
 
-      - name: Compile clinet
+      - name: Compile client
         shell: bash
         run: |
           npm install -g typescript
           cd client
-          npm install
-          tsc
+          npm ci
+          npm run build
           cd ..
+
+      - name: Build Addon Manager WebVue
+        shell: bash
+        run: |
+          cd client/webvue
+          npm ci
+          npm run build
+          cd ../..
 
       - name: Pack vsix
         id: pack

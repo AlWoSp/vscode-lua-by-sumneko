@@ -1,6 +1,19 @@
 {
     "description": "Setting of sumneko.lua",
     "properties": {
+        "addonManager": {
+            "properties": {
+                "enable": {
+                    "$ref": "#/properties/addonManager.enable"
+                }
+            }
+        },
+        "addonManager.enable": {
+            "default": true,
+            "markdownDescription": "Whether the addon manager is enabled or not.",
+            "scope": "resource",
+            "type": "boolean"
+        },
         "codeLens": {
             "properties": {
                 "enable": {
@@ -742,7 +755,7 @@
                 },
                 "circle-doc-class": {
                     "default": "Any",
-                    "description": "%config.diagnostics.circle-doc-class%",
+                    "description": "",
                     "enum": [
                         "Any",
                         "Opened",
@@ -1476,7 +1489,7 @@
                 },
                 "circle-doc-class": {
                     "default": "Warning",
-                    "description": "%config.diagnostics.circle-doc-class%",
+                    "description": "",
                     "enum": [
                         "Error",
                         "Warning",
@@ -2318,7 +2331,7 @@
         },
         "format.defaultConfig": {
             "additionalProperties": false,
-            "default": [],
+            "default": {},
             "markdownDescription": "預設的格式化組態，優先順序低於工作區內的 `.editorconfig` 檔案。\n請查閱[格式化文件](https://github.com/CppCXY/EmmyLuaCodeStyle/tree/master/docs)了解用法。\n",
             "patternProperties": {
                 ".*": {
@@ -2521,7 +2534,7 @@
             "items": {
                 "type": "string"
             },
-            "markdownDescription": "VSCode中啟動語言伺服時的[命令列參數](https://github.com/sumneko/lua-language-server/wiki/Getting-Started#arguments)。",
+            "markdownDescription": "VSCode中啟動語言伺服時的[命令列參數](https://github.com/LuaLS/lua-language-server/wiki/Getting-Started#arguments)。",
             "scope": "resource",
             "type": "array"
         },
@@ -2568,7 +2581,7 @@
             "properties": {
                 "basic": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.basic%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2578,7 +2591,7 @@
                 },
                 "bit": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.bit%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2588,7 +2601,7 @@
                 },
                 "bit32": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.bit32%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2598,7 +2611,7 @@
                 },
                 "builtin": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.builtin%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2608,7 +2621,7 @@
                 },
                 "coroutine": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.coroutine%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2618,7 +2631,7 @@
                 },
                 "debug": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.debug%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2628,7 +2641,7 @@
                 },
                 "ffi": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.ffi%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2638,7 +2651,7 @@
                 },
                 "io": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.io%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2648,7 +2661,7 @@
                 },
                 "jit": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.jit%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2658,7 +2671,7 @@
                 },
                 "math": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.math%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2668,7 +2681,7 @@
                 },
                 "os": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.os%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2678,7 +2691,7 @@
                 },
                 "package": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.package%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2688,7 +2701,7 @@
                 },
                 "string": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.string%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2698,7 +2711,7 @@
                 },
                 "string.buffer": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.string.buffer%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2708,7 +2721,7 @@
                 },
                 "table": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.table%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2718,7 +2731,7 @@
                 },
                 "table.clear": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.table.clear%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2728,7 +2741,7 @@
                 },
                 "table.new": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.table.new%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2738,7 +2751,7 @@
                 },
                 "utf8": {
                     "default": "default",
-                    "description": "%config.runtime.builtin.utf8%",
+                    "description": "",
                     "enum": [
                         "default",
                         "enable",
@@ -2761,10 +2774,10 @@
             ],
             "markdownDescription": "檔案編碼，選項 `ansi` 只在 `Windows` 平台下有效。",
             "markdownEnumDescriptions": [
-                "%config.runtime.fileEncoding.utf8%",
-                "%config.runtime.fileEncoding.ansi%",
-                "%config.runtime.fileEncoding.utf16le%",
-                "%config.runtime.fileEncoding.utf16be%"
+                "",
+                "",
+                "",
+                ""
             ],
             "scope": "resource",
             "type": "string"
@@ -2825,7 +2838,7 @@
         },
         "runtime.plugin": {
             "default": "",
-            "markdownDescription": "延伸模組路徑，請查閱[文件](https://github.com/sumneko/lua-language-server/wiki/Plugins)瞭解用法。",
+            "markdownDescription": "延伸模組路徑，請查閱[文件](https://github.com/LuaLS/lua-language-server/wiki/Plugins)瞭解用法。",
             "scope": "resource",
             "type": "string"
         },
@@ -2840,7 +2853,7 @@
         },
         "runtime.special": {
             "additionalProperties": false,
-            "default": [],
+            "default": {},
             "markdownDescription": "將自訂全域變數視為一些特殊的內建變數，語言伺服將提供特殊的支援。\n下面這個例子表示將 `include` 視為 `require` 。\n```json\n\"Lua.runtime.special\" : {\n    \"include\" : \"require\"\n}\n```\n",
             "patternProperties": {
                 ".*": {
@@ -2857,7 +2870,8 @@
                         "xpcall",
                         "assert",
                         "error",
-                        "type"
+                        "type",
+                        "os.exit"
                     ],
                     "type": "string"
                 }
@@ -2883,11 +2897,11 @@
             ],
             "markdownDescription": "Lua執行版本。",
             "markdownEnumDescriptions": [
-                "%config.runtime.version.Lua 5.1%",
-                "%config.runtime.version.Lua 5.2%",
-                "%config.runtime.version.Lua 5.3%",
-                "%config.runtime.version.Lua 5.4%",
-                "%config.runtime.version.LuaJIT%"
+                "",
+                "",
+                "",
+                "",
+                ""
             ],
             "scope": "resource",
             "type": "string"
@@ -3065,9 +3079,6 @@
                 "preloadFileSize": {
                     "$ref": "#/properties/workspace.preloadFileSize"
                 },
-                "supportScheme": {
-                    "$ref": "#/properties/workspace.supportScheme"
-                },
                 "useGitIgnore": {
                     "$ref": "#/properties/workspace.useGitIgnore"
                 },
@@ -3120,19 +3131,6 @@
             "scope": "resource",
             "type": "integer"
         },
-        "workspace.supportScheme": {
-            "default": [
-                "file",
-                "untitled",
-                "git"
-            ],
-            "items": {
-                "type": "string"
-            },
-            "markdownDescription": "為以下 `scheme` 的lua檔案提供語言伺服。",
-            "scope": "resource",
-            "type": "array"
-        },
         "workspace.useGitIgnore": {
             "default": true,
             "markdownDescription": "忽略 `.gitignore` 中列舉的檔案。",
@@ -3144,7 +3142,7 @@
             "items": {
                 "type": "string"
             },
-            "markdownDescription": "在這裡添加私有的第三方庫適應檔案路徑，請參考內建的[組態檔案路徑](https://github.com/sumneko/lua-language-server/tree/master/meta/3rd)",
+            "markdownDescription": "在這裡添加私有的第三方庫適應檔案路徑，請參考內建的[組態檔案路徑](https://github.com/LuaLS/lua-language-server/tree/master/meta/3rd)",
             "scope": "resource",
             "type": "array"
         }

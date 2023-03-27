@@ -339,9 +339,9 @@
 							],
 							"type": "string"
 						},
-						"conventions": {
+						"strict-conventions": {
 							"default": "None",
-							"description": "%config.diagnostics.conventions%",
+							"description": "%config.diagnostics.strict-conventions%",
 							"enum": [
 								"Any",
 								"Opened",
@@ -494,9 +494,9 @@
 							],
 							"type": "string"
 						},
-						"conventions": {
+						"strict-conventions": {
 							"default": "Fallback",
-							"description": "%config.diagnostics.conventions%",
+							"description": "%config.diagnostics.strict-conventions%",
 							"enum": [
 								"Error",
 								"Warning",

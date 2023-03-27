@@ -46,7 +46,7 @@
     "config.diagnostics.code-after-break": "Enable diagnostics for code placed after a break statement in a loop.",
     "config.diagnostics.codestyle": "* codestyle-check\n* spell-check",
     "config.diagnostics.codestyle-check": "Enable diagnostics for incorrectly styled lines.",
-    "config.diagnostics.conventions": "Enable diagnostics for stricter coding conventions.",
+    "config.diagnostics.strict-conventions": "Enable diagnostics for stricter coding conventions.",
     "config.diagnostics.count-down-loop": "Enable diagnostics for `for` loops which will never reach their max/limit because the loop is incrementing instead of decrementing.",
     "config.diagnostics.deprecated": "Enable diagnostics to highlight deprecated API.",
     "config.diagnostics.different-requires": "Enable diagnostics for files which are required by two different paths.",

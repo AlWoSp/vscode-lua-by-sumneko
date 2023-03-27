@@ -397,7 +397,7 @@
                     ],
                     "type": "string"
                 },
-                "conventions": {
+                "strict-conventions": {
                     "default": "None",
                     "description": "* global-element\n* uppercase-local\n* ...",
                     "enum": [
@@ -552,7 +552,7 @@
                     ],
                     "type": "string"
                 },
-                "conventions": {
+                "strict-conventions": {
                     "default": "Fallback",
                     "description": "* global-element\n* uppercase-local\n* ...",
                     "enum": [

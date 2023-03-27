@@ -339,17 +339,6 @@
 							],
 							"type": "string"
 						},
-						"strict-conventions": {
-							"default": "None",
-							"description": "%config.diagnostics.strict-conventions%",
-							"enum": [
-								"Any",
-								"Opened",
-								"None",
-								"Fallback"
-							],
-							"type": "string"
-						},
 						"duplicate": {
 							"default": "Fallback",
 							"description": "%config.diagnostics.duplicate%",
@@ -397,6 +386,17 @@
 						"strict": {
 							"default": "Fallback",
 							"description": "%config.diagnostics.strict%",
+							"enum": [
+								"Any",
+								"Opened",
+								"None",
+								"Fallback"
+							],
+							"type": "string"
+						},
+						"strict-conventions": {
+							"default": "None",
+							"description": "%config.diagnostics.strict-conventions%",
 							"enum": [
 								"Any",
 								"Opened",
@@ -494,18 +494,6 @@
 							],
 							"type": "string"
 						},
-						"strict-conventions": {
-							"default": "Fallback",
-							"description": "%config.diagnostics.strict-conventions%",
-							"enum": [
-								"Error",
-								"Warning",
-								"Information",
-								"Hint",
-								"Fallback"
-							],
-							"type": "string"
-						},
 						"duplicate": {
 							"default": "Fallback",
 							"description": "%config.diagnostics.duplicate%",
@@ -557,6 +545,18 @@
 						"strict": {
 							"default": "Fallback",
 							"description": "%config.diagnostics.strict%",
+							"enum": [
+								"Error",
+								"Warning",
+								"Information",
+								"Hint",
+								"Fallback"
+							],
+							"type": "string"
+						},
+						"strict-conventions": {
+							"default": "Fallback",
+							"description": "%config.diagnostics.strict-conventions%",
 							"enum": [
 								"Error",
 								"Warning",

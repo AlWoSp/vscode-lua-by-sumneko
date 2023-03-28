@@ -397,17 +397,6 @@
                     ],
                     "type": "string"
                 },
-                "strict-conventions": {
-                    "default": "None",
-                    "description": "* global-element\n* uppercase-local\n* ...",
-                    "enum": [
-                        "Any",
-                        "Opened",
-                        "None",
-                        "Fallback"
-                    ],
-                    "type": "string"
-                },
                 "duplicate": {
                     "default": "Fallback",
                     "description": "* duplicate-index\n* duplicate-set-field",
@@ -455,6 +444,17 @@
                 "strict": {
                     "default": "Fallback",
                     "description": "* close-non-object\n* deprecated\n* discard-returns\n* invisible",
+                    "enum": [
+                        "Any",
+                        "Opened",
+                        "None",
+                        "Fallback"
+                    ],
+                    "type": "string"
+                },
+                "strict-conventions": {
+                    "default": "None",
+                    "description": "* global-element\n* uppercase-local\n* ...",
                     "enum": [
                         "Any",
                         "Opened",

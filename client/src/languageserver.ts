@@ -76,6 +76,18 @@ function registerCustomCommands(context: ExtensionContext) {
             arguments: [output.toString()],
         });
     }));
+
+    context.subscriptions.push(Commands.registerCommand('lua.reloadFFIMeta', async () => {
+        defaultClient.client.sendRequest(ExecuteCommandRequest.type, {
+            command: 'lua.reloadFFIMeta',
+        })
+    }))
+}
+
+/** Creates a new {@link LuaClient} and starts it. */
+export const createClient = (context: ExtensionContext) => {
+    defaultClient = new LuaClient(context, [{ language: 'lua' }])
+    defaultClient.start();
 }
 
 class LuaClient {
@@ -194,6 +206,7 @@ class LuaClient {
             return undefined;
         };
         const port = commandParam[portIndex].split("=")[1]
+                  || commandParam[portIndex].split(" ")[1]
                   || commandParam[portIndex + 1];
         if (!port) {
             return undefined;
@@ -247,10 +260,7 @@ export function activate(context: ExtensionContext) {
 
         // Untitled files go to a default client.
         if (!defaultClient) {
-            defaultClient = new LuaClient(context, [
-                { language: 'lua' }
-            ]);
-            defaultClient.start();
+            createClient(context);
             return;
         }
     }

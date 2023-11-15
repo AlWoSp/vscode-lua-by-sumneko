@@ -239,6 +239,7 @@
                     "global-in-nil-env",
                     "incomplete-signature-doc",
                     "index-in-func-name",
+                    "inject-field",
                     "invisible",
                     "jump-local-scope",
                     "keyword",
@@ -282,6 +283,7 @@
                     "miss-sep-in-table",
                     "miss-space-between",
                     "miss-symbol",
+                    "missing-fields",
                     "missing-global-doc",
                     "missing-local-export-doc",
                     "missing-parameter",
@@ -479,7 +481,7 @@
                 },
                 "type-check": {
                     "default": "Fallback",
-                    "description": "* assign-type-mismatch\n* cast-local-type\n* cast-type-mismatch\n* need-check-nil\n* param-type-mismatch\n* return-type-mismatch\n* undefined-field",
+                    "description": "* assign-type-mismatch\n* cast-local-type\n* cast-type-mismatch\n* inject-field\n* need-check-nil\n* param-type-mismatch\n* return-type-mismatch\n* undefined-field",
                     "enum": [
                         "Any",
                         "Opened",
@@ -490,7 +492,7 @@
                 },
                 "unbalanced": {
                     "default": "Fallback",
-                    "description": "* missing-parameter\n* missing-return\n* missing-return-value\n* redundant-parameter\n* redundant-return-value\n* redundant-value\n* unbalanced-assignments",
+                    "description": "* missing-fields\n* missing-parameter\n* missing-return\n* missing-return-value\n* redundant-parameter\n* redundant-return-value\n* redundant-value\n* unbalanced-assignments",
                     "enum": [
                         "Any",
                         "Opened",
@@ -641,7 +643,7 @@
                 },
                 "type-check": {
                     "default": "Fallback",
-                    "description": "* assign-type-mismatch\n* cast-local-type\n* cast-type-mismatch\n* need-check-nil\n* param-type-mismatch\n* return-type-mismatch\n* undefined-field",
+                    "description": "* assign-type-mismatch\n* cast-local-type\n* cast-type-mismatch\n* inject-field\n* need-check-nil\n* param-type-mismatch\n* return-type-mismatch\n* undefined-field",
                     "enum": [
                         "Error",
                         "Warning",
@@ -653,7 +655,7 @@
                 },
                 "unbalanced": {
                     "default": "Fallback",
-                    "description": "* missing-parameter\n* missing-return\n* missing-return-value\n* redundant-parameter\n* redundant-return-value\n* redundant-value\n* unbalanced-assignments",
+                    "description": "* missing-fields\n* missing-parameter\n* missing-return\n* missing-return-value\n* redundant-parameter\n* redundant-return-value\n* redundant-value\n* unbalanced-assignments",
                     "enum": [
                         "Error",
                         "Warning",
@@ -783,7 +785,7 @@
                 },
                 "circle-doc-class": {
                     "default": "Any",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "Any",
                         "Opened",
@@ -1015,6 +1017,19 @@
                     ],
                     "type": "string"
                 },
+                "inject-field": {
+                    "default": "Opened",
+                    "description": "TODO: Needs documentation",
+                    "enum": [
+                        "Any",
+                        "Opened",
+                        "None",
+                        "Any!",
+                        "Opened!",
+                        "None!"
+                    ],
+                    "type": "string"
+                },
                 "invisible": {
                     "default": "Any",
                     "description": "Enable diagnostics for accesses to fields which are invisible.",
@@ -1031,6 +1046,19 @@
                 "lowercase-global": {
                     "default": "Any",
                     "description": "首字母小写的全局变量定义",
+                    "enum": [
+                        "Any",
+                        "Opened",
+                        "None",
+                        "Any!",
+                        "Opened!",
+                        "None!"
+                    ],
+                    "type": "string"
+                },
+                "missing-fields": {
+                    "default": "Any",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "Any",
                         "Opened",
@@ -1582,7 +1610,7 @@
                 },
                 "circle-doc-class": {
                     "default": "Warning",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "Error",
                         "Warning",
@@ -1850,6 +1878,21 @@
                     ],
                     "type": "string"
                 },
+                "inject-field": {
+                    "default": "Warning",
+                    "description": "TODO: Needs documentation",
+                    "enum": [
+                        "Error",
+                        "Warning",
+                        "Information",
+                        "Hint",
+                        "Error!",
+                        "Warning!",
+                        "Information!",
+                        "Hint!"
+                    ],
+                    "type": "string"
+                },
                 "invisible": {
                     "default": "Warning",
                     "description": "Enable diagnostics for accesses to fields which are invisible.",
@@ -1868,6 +1911,21 @@
                 "lowercase-global": {
                     "default": "Information",
                     "description": "首字母小写的全局变量定义",
+                    "enum": [
+                        "Error",
+                        "Warning",
+                        "Information",
+                        "Hint",
+                        "Error!",
+                        "Warning!",
+                        "Information!",
+                        "Hint!"
+                    ],
+                    "type": "string"
+                },
+                "missing-fields": {
+                    "default": "Warning",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "Error",
                         "Warning",
@@ -2772,7 +2830,7 @@
             "properties": {
                 "basic": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2782,7 +2840,7 @@
                 },
                 "bit": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2792,7 +2850,7 @@
                 },
                 "bit32": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2802,7 +2860,7 @@
                 },
                 "builtin": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2812,7 +2870,7 @@
                 },
                 "coroutine": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2822,7 +2880,7 @@
                 },
                 "debug": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2832,7 +2890,7 @@
                 },
                 "ffi": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2842,7 +2900,7 @@
                 },
                 "io": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2852,7 +2910,7 @@
                 },
                 "jit": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2862,7 +2920,7 @@
                 },
                 "jit.profile": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2872,7 +2930,7 @@
                 },
                 "jit.util": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2882,7 +2940,7 @@
                 },
                 "math": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2892,7 +2950,7 @@
                 },
                 "os": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2902,7 +2960,7 @@
                 },
                 "package": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2912,7 +2970,7 @@
                 },
                 "string": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2922,7 +2980,7 @@
                 },
                 "string.buffer": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2932,7 +2990,7 @@
                 },
                 "table": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2942,7 +3000,7 @@
                 },
                 "table.clear": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2952,7 +3010,7 @@
                 },
                 "table.new": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2962,7 +3020,7 @@
                 },
                 "utf8": {
                     "default": "default",
-                    "description": "",
+                    "description": "TODO: Needs documentation",
                     "enum": [
                         "default",
                         "enable",
@@ -2985,10 +3043,10 @@
             ],
             "markdownDescription": "File encoding. The `ansi` option is only available under the `Windows` platform.",
             "markdownEnumDescriptions": [
-                "",
-                "",
-                "",
-                ""
+                "TODO: Needs documentation",
+                "TODO: Needs documentation",
+                "TODO: Needs documentation",
+                "TODO: Needs documentation"
             ],
             "scope": "resource",
             "type": "string"
@@ -3049,7 +3107,7 @@
         },
         "runtime.plugin": {
             "default": "",
-            "markdownDescription": "Plugin path. Please read [wiki](https://github.com/LuaLS/lua-language-server/wiki/Plugins) to learn more.",
+            "markdownDescription": "Plugin path. Please read [wiki](https://luals.github.io/wiki/plugins) to learn more.",
             "scope": "resource",
             "type": "string"
         },
@@ -3108,11 +3166,11 @@
             ],
             "markdownDescription": "Lua runtime version.",
             "markdownEnumDescriptions": [
-                "",
-                "",
-                "",
-                "",
-                ""
+                "TODO: Needs documentation",
+                "TODO: Needs documentation",
+                "TODO: Needs documentation",
+                "TODO: Needs documentation",
+                "TODO: Needs documentation"
             ],
             "scope": "resource",
             "type": "string"
@@ -3299,10 +3357,12 @@
             }
         },
         "workspace.checkThirdParty": {
-            "default": true,
             "markdownDescription": "Automatic detection and adaptation of third-party libraries, currently supported libraries are:\n\n* OpenResty\n* Cocos4.0\n* LÖVE\n* LÖVR\n* skynet\n* Jass\n",
             "scope": "resource",
-            "type": "boolean"
+            "type": [
+                "string",
+                "boolean"
+            ]
         },
         "workspace.ignoreDir": {
             "default": [

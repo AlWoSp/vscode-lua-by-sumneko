@@ -33,6 +33,10 @@
 			{
 				"command": "lua.exportDocument",
 				"title": "%command.exportDocument%"
+			},
+			{
+				"command": "lua.reloadFFIMeta",
+				"title": "%command.reloadFFIMeta%"
 			}
 		],
 		"configuration": {
@@ -181,6 +185,7 @@
 							"global-in-nil-env",
 							"incomplete-signature-doc",
 							"index-in-func-name",
+							"inject-field",
 							"invisible",
 							"jump-local-scope",
 							"keyword",
@@ -224,6 +229,7 @@
 							"miss-sep-in-table",
 							"miss-space-between",
 							"miss-symbol",
+							"missing-fields",
 							"missing-global-doc",
 							"missing-local-export-doc",
 							"missing-parameter",
@@ -980,6 +986,19 @@
 							],
 							"type": "string"
 						},
+						"inject-field": {
+							"default": "Opened",
+							"description": "%config.diagnostics.inject-field%",
+							"enum": [
+								"Any",
+								"Opened",
+								"None",
+								"Any!",
+								"Opened!",
+								"None!"
+							],
+							"type": "string"
+						},
 						"invisible": {
 							"default": "Any",
 							"description": "%config.diagnostics.invisible%",
@@ -996,6 +1015,19 @@
 						"lowercase-global": {
 							"default": "Any",
 							"description": "%config.diagnostics.lowercase-global%",
+							"enum": [
+								"Any",
+								"Opened",
+								"None",
+								"Any!",
+								"Opened!",
+								"None!"
+							],
+							"type": "string"
+						},
+						"missing-fields": {
+							"default": "Any",
+							"description": "%config.diagnostics.missing-fields%",
 							"enum": [
 								"Any",
 								"Opened",
@@ -1815,6 +1847,21 @@
 							],
 							"type": "string"
 						},
+						"inject-field": {
+							"default": "Warning",
+							"description": "%config.diagnostics.inject-field%",
+							"enum": [
+								"Error",
+								"Warning",
+								"Information",
+								"Hint",
+								"Error!",
+								"Warning!",
+								"Information!",
+								"Hint!"
+							],
+							"type": "string"
+						},
 						"invisible": {
 							"default": "Warning",
 							"description": "%config.diagnostics.invisible%",
@@ -1833,6 +1880,21 @@
 						"lowercase-global": {
 							"default": "Information",
 							"description": "%config.diagnostics.lowercase-global%",
+							"enum": [
+								"Error",
+								"Warning",
+								"Information",
+								"Hint",
+								"Error!",
+								"Warning!",
+								"Information!",
+								"Hint!"
+							],
+							"type": "string"
+						},
+						"missing-fields": {
+							"default": "Warning",
+							"description": "%config.diagnostics.missing-fields%",
 							"enum": [
 								"Error",
 								"Warning",
@@ -3049,10 +3111,12 @@
 					"type": "boolean"
 				},
 				"Lua.workspace.checkThirdParty": {
-					"default": true,
 					"markdownDescription": "%config.workspace.checkThirdParty%",
 					"scope": "resource",
-					"type": "boolean"
+					"type": [
+						"string",
+						"boolean"
+					]
 				},
 				"Lua.workspace.ignoreDir": {
 					"default": [
@@ -3148,6 +3212,11 @@
 				},
 				{
 					"command": "lua.addon_manager.open",
+					"group": "z_commands",
+					"when": "resourceLangId == lua"
+				},
+				{
+					"command": "lua.reloadFFIMeta",
 					"group": "z_commands",
 					"when": "resourceLangId == lua"
 				}
@@ -3297,5 +3366,5 @@
 	"sponsor": {
 		"url": "https://github.com/LuaLS/lua-language-server/issues/484"
 	},
-	"version": "3.6.21"
+	"version": "3.7.2"
 }
